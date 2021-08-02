@@ -86,18 +86,23 @@ public class GameController {
 	
 	
 	@DeleteMapping("games/{id}")
-	public boolean deleteGame(@PathVariable int id, 
+	public String deleteGame(@PathVariable Integer id, 
 						HttpServletRequest req, 
 						HttpServletResponse res) {
-		
-		
-		if(svc.findGameById(id) == null) {
-			res.setStatus(204);
-		} else {
-			res.setStatus(404); 
+		try {
+			boolean deleted = svc.delete(id);
+			if(deleted) {
+				res.setStatus(204);
+				return "Deleted";
+			} else {
+				res.setStatus(404); 
+				return "Not found"; 
+			}
+		} catch(Exception e) {
+			return "Exception";
 		}
 		
-		return svc.delete(id);
+		
 	}
 	
 	
