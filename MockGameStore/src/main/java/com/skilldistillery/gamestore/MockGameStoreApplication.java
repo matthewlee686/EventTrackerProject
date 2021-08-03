@@ -2,10 +2,15 @@ package com.skilldistillery.gamestore;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 @SpringBootApplication
-public class MockGameStoreApplication {
-
+public class MockGameStoreApplication  extends SpringBootServletInitializer {
+	  @Override
+	  protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+	    return application.sources(MockGameStoreApplication.class);
+	  }
 	public static void main(String[] args) {
 		SpringApplication.run(MockGameStoreApplication.class, args);
 	}
