@@ -1,5 +1,6 @@
 package com.skilldistillery.gamestore.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,6 +16,16 @@ public class Game {
 	private String title;
 	
 	private String description; 
+	
+	private String platform;
+	
+	@Column(name="release_year")
+	private Integer releaseYear; 
+	
+	private Integer price;
+	
+	@Column(name="condition_game")
+	private String conditionGame;
 	
 	//no-arg
 	public Game() {}
@@ -43,9 +54,42 @@ public class Game {
 		this.description = description;
 	}
 
+	public String getPlatform() {
+		return platform;
+	}
+
+	public void setPlatform(String platform) {
+		this.platform = platform;
+	}
+
+	public Integer getReleaseYear() {
+		return releaseYear;
+	}
+
+	public void setReleaseYear(Integer releaseYear) {
+		this.releaseYear = releaseYear;
+	}
+
+	public Integer getPrice() {
+		return price;
+	}
+
+	public void setPrice(Integer price) {
+		this.price = price;
+	}
+
+	public String getConditionGame() {
+		return conditionGame;
+	}
+
+	public void setConditionGame(String conditionGame) {
+		this.conditionGame = conditionGame;
+	}
+
 	@Override
 	public String toString() {
-		return "Game [id=" + id + ", title=" + title + ", description=" + description + "]";
+		return "Game [id=" + id + ", title=" + title + ", description=" + description + ", platform=" + platform
+				+ ", releaseYear=" + releaseYear + ", price=" + price + ", conditionGame=" + conditionGame + "]";
 	}
 	
 	

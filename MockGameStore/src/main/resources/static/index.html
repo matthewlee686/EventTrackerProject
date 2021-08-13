@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Mock Game Store</title>
+<script src="js/script.js"></script>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>Brooklyn Game Store</h1>
+
+<div id="gameListDiv">
+    <table id="gameTable"></table>
+</div>
+
+<h3>Add a Game</h3>
+<form name="newGameForm">
+  
+    <label for='title'>Title </label><input type='text' name='title'><br>
+    <label for='description'>Description</label><br>
+    <textarea rows="3" cols="60" name="description"></textarea><br>
+    Platform <select name='platform'>
+        <option value="">--Select--</option>
+        <option value='nintendo'>Nintendo</option>
+        <option value='pc'>PC</option>
+        <option value='xbox'>Xbox</option>
+        <option value='playstation'>Playstation</option>
+        </select><br>
+    
+    <label for='releaseYear'>Release Year </label><input type='number' name='releaseYear'><br>
+    <label for='price'>Price</label><input type='number' name='price'><br>
+    Condition <select name='conditionGame'>
+        <option value="">--Select--</option>
+        <option value="new">New</option>
+        <option value="pre-owned">Pre-Owned</option>
+    </select><br>
+    <button name='addGame'>Add Game</button>
+</form>
+
+
+
+</body>
+</html>

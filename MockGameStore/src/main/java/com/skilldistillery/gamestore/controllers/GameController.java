@@ -96,7 +96,7 @@ public class GameController {
 				return "Deleted";
 			} else {
 				res.setStatus(404); 
-				return "Not found"; 
+				return "Game not found"; 
 			}
 		} catch(Exception e) {
 			return "Exception";
